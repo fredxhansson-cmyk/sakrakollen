@@ -6,6 +6,7 @@ export default function Integritetspolicy() {
     <>
       <Head>
         <title>Integritetspolicy — Säkrakollen</title>
+        <meta name="robots" content="noindex, follow" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
       </Head>
       <nav style={{ background:'#fff', borderBottom:'1px solid #e2e8f0', padding:'0 20px', height:60, display:'flex', alignItems:'center', fontFamily:'Inter,sans-serif' }}>
@@ -13,7 +14,7 @@ export default function Integritetspolicy() {
       </nav>
       <main style={{ maxWidth:760, margin:'0 auto', padding:'52px 20px', lineHeight:1.82, color:'#374151', fontFamily:'Inter,sans-serif' }}>
         <h1 style={{ fontSize:32, fontWeight:800, marginBottom:8, color:'#0f172a' }}>Integritetspolicy</h1>
-        <p style={{ color:'#64748b', marginBottom:36, fontSize:14 }}>Senast uppdaterad: 2026-06-23</p>
+        <p style={{ color:'#64748b', marginBottom:36, fontSize:14 }}>Senast uppdaterad: 2026-06-24</p>
         <h2 style={{ fontSize:20, fontWeight:700, marginBottom:10, color:'#0f172a' }}>Personuppgifter</h2>
         <p style={{ marginBottom:20, fontSize:15 }}>Vi samlar inte in personuppgifter utan ditt samtycke. Vi använder cookies för att förbättra upplevelsen och spåra affiliate-klick via Adtraction.</p>
         <h2 style={{ fontSize:20, fontWeight:700, marginBottom:10, marginTop:32, color:'#0f172a' }}>Cookies</h2>
