@@ -7,6 +7,7 @@ export default function OmOss() {
       <Head>
         <title>Om oss — Säkrakollen</title>
         <meta name="description" content="Lär dig om vår redaktionspolicy, hur vi granskar leverantörer och hur vår affiliatemarknadsföring fungerar." />
+        <meta name="robots" content="noindex, follow" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
       </Head>
       <nav style={{ background:'#fff', borderBottom:'1px solid #e2e8f0', padding:'0 20px', height:60, display:'flex', alignItems:'center', justifyContent:'space-between', position:'sticky', top:0, zIndex:100, fontFamily:'Inter,sans-serif' }}>
