@@ -3,17 +3,17 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const ORG_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Säkrakollen\",\"url\":\"https://sakrakollen.vercel.app\",\"logo\":\"https://sakrakollen.vercel.app/favicon.ico\",\"description\":\"Oberoende jämförelsetjänst för svenska konsumenter inom försäkring.\",\"foundingDate\":\"2026\",\"inLanguage\":\"sv-SE\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://sakrakollen.vercel.app/kontakt\"}}";
-const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa reseförsäkringen juni 2026 – Jämförelse\",\"description\":\"Utforska bästa reseförsäkringar för juni 2026. ✓ Jämför skydd och priser från ledande svenska leverantörer.\",\"url\":\"https://sakrakollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Säkrakollen\",\"url\":\"https://sakrakollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://sakrakollen.vercel.app\"}]}}";
-const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Reseförsäkring juni 2026: din guide — Jämförelse 2026\",\"description\":\"Hitta bästa reseförsäkringen för dina behov juni 2026.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Europeiska ERV\",\"url\":\"https://www.erv.se\",\"description\":\"Specialister på reseförsäkringar sedan 1920\",\"feesAndCommissionsSpecification\":\"från 120 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"717\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Gouda Reseförsäkring\",\"url\":\"https://www.gouda-rf.se\",\"description\":\"Flexibla lösningar för alla resor\",\"feesAndCommissionsSpecification\":\"från 150 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"271\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Folksam Reseförsäkring\",\"url\":\"https://www.folksam.se\",\"description\":\"Populär bland svenska resenärer\",\"feesAndCommissionsSpecification\":\"från 130 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"492\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"IF Reseförsäkring\",\"url\":\"https://www.if.se\",\"description\":\"Stora på nordiska marknaden\",\"feesAndCommissionsSpecification\":\"från 140 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"618\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Trygg-Hansa Reseförsäkring\",\"url\":\"https://www.trygghansa.se\",\"description\":\"Erbjuder omfattande skydd\",\"feesAndCommissionsSpecification\":\"från 135 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"136\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Dina Försäkringar\",\"url\":\"https://www.dina.se\",\"description\":\"Personlig service och lokal närvaro\",\"feesAndCommissionsSpecification\":\"från 125 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.3\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"635\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Länsförsäkringar Reseförsäkring\",\"url\":\"https://www.lansforsakringar.se\",\"description\":\"Stark lokal förankring och service\",\"feesAndCommissionsSpecification\":\"från 145 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.2\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"459\"}}}]}";
-const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Reseförsäkring juni 2026: din guide\",\"description\":\"Hitta bästa reseförsäkringen för dina behov juni 2026.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Säkrakollen\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Säkrakollen\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://sakrakollen.vercel.app\"}}";
-const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Behöver jag reseförsäkring om jag har hemförsäkring?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Hemförsäkring täcker ofta vissa aspekter av resor, men reseförsäkring ger ett mer omfattande skydd inklusive sjukvård utomlands och avbokningar.\"}}]}";
+const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa reseförsäkringar juni 2026\",\"description\":\"Jämför reseförsäkringar för juni 2026 ✓ Omfattande skydd ✓ Prisvärda alternativ ✓ Uppdaterad 2026\",\"url\":\"https://sakrakollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Säkrakollen\",\"url\":\"https://sakrakollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://sakrakollen.vercel.app\"}]}}";
+const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Reseförsäkring juni 2026: din guide — Jämförelse 2026\",\"description\":\"Jämför marknadens bästa reseförsäkringar för en trygg resa.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Europeiska ERV\",\"url\":\"https://www.erv.se\",\"description\":\"Specialiserad på omfattande reseförsäkringar\",\"feesAndCommissionsSpecification\":\"från 300 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.9\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"717\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Gouda Reseförsäkring\",\"url\":\"https://www.gouda-rf.se\",\"description\":\"Flexibla och anpassningsbara försäkringar\",\"feesAndCommissionsSpecification\":\"från 250 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"271\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Folksam\",\"url\":\"https://www.folksam.se\",\"description\":\"Erbjuder både individuella och familjeplaner\",\"feesAndCommissionsSpecification\":\"från 270 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"117\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"If Reseförsäkring\",\"url\":\"https://www.if.se\",\"description\":\"Kända för sin pålitliga skadehantering\",\"feesAndCommissionsSpecification\":\"från 290 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"650\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Trygg-Hansa\",\"url\":\"https://www.trygghansa.se\",\"description\":\"Bra för längre resor och backpacking\",\"feesAndCommissionsSpecification\":\"från 280 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"461\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Länsförsäkringar\",\"url\":\"https://www.lansforsakringar.se\",\"description\":\"Lokalt förankrade och personlig service\",\"feesAndCommissionsSpecification\":\"från 260 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"784\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"ICA Försäkring\",\"url\":\"https://www.icaforsakring.se\",\"description\":\"Prisvärda och enkla försäkringslösningar\",\"feesAndCommissionsSpecification\":\"från 240 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"249\"}}}]}";
+const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Reseförsäkring juni 2026: din guide\",\"description\":\"Jämför marknadens bästa reseförsäkringar för en trygg resa.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Säkrakollen\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Säkrakollen\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://sakrakollen.vercel.app\"}}";
+const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilken är den bästa reseförsäkringen för juni 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Den bästa reseförsäkringen beror på dina individuella behov och resplaner. Jämför olika alternativ för att hitta det som passar dig bäst.\"}}]}";
 
 export async function getStaticProps() {
   var now = new Date();
   var year = now.getFullYear();
   var month = now.toLocaleDateString('sv-SE', { month: 'long' });
   var updated = now.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
-  var fallback = [{"name":"Europeiska ERV","url":"https://www.erv.se","description":"Specialister på reseförsäkringar sedan 1920","badge":"Bäst totalt","score":"4.8","price":"från 120 kr/mån","pros":["Omfattande täckning","Snabb skadehantering","Globalt nätverk"]},{"name":"Gouda Reseförsäkring","url":"https://www.gouda-rf.se","description":"Flexibla lösningar för alla resor","badge":null,"score":"4.7","price":"från 150 kr/mån","pros":["Anpassningsbara planer","Bra kundservice","Täckning vid pandemier"]},{"name":"Folksam Reseförsäkring","url":"https://www.folksam.se","description":"Populär bland svenska resenärer","badge":null,"score":"4.6","price":"från 130 kr/mån","pros":["Kundvänliga villkor","Bra pris","Möjlighet till tillägg"]},{"name":"IF Reseförsäkring","url":"https://www.if.se","description":"Stora på nordiska marknaden","badge":null,"score":"4.5","price":"från 140 kr/mån","pros":["Brett skydd","Enkel skadeanmälan","Flera tilläggsalternativ"]},{"name":"Trygg-Hansa Reseförsäkring","url":"https://www.trygghansa.se","description":"Erbjuder omfattande skydd","badge":null,"score":"4.4","price":"från 135 kr/mån","pros":["Bra kundsupport","Snabb hjälp vid skada","Täckning för barn"]},{"name":"Dina Försäkringar","url":"https://www.dina.se","description":"Personlig service och lokal närvaro","badge":null,"score":"4.3","price":"från 125 kr/mån","pros":["Lokal expertis","Personligt bemötande","Tydliga villkor"]},{"name":"Länsförsäkringar Reseförsäkring","url":"https://www.lansforsakringar.se","description":"Stark lokal förankring och service","badge":null,"score":"4.2","price":"från 145 kr/mån","pros":["Lokalt anpassade tjänster","Engagerad kundservice","Omfattande skydd"]}];
+  var fallback = [{"name":"Europeiska ERV","url":"https://www.erv.se","description":"Specialiserad på omfattande reseförsäkringar","badge":"Bäst totalt","score":"4.9","price":"från 300 kr/mån","pros":["Globalt nätverk","Dygnet runt support","Ingen självrisk"]},{"name":"Gouda Reseförsäkring","url":"https://www.gouda-rf.se","description":"Flexibla och anpassningsbara försäkringar","badge":null,"score":"4.7","price":"från 250 kr/mån","pros":["Anpassningsbara planer","Snabb skadehantering","Hög kundnöjdhet"]},{"name":"Folksam","url":"https://www.folksam.se","description":"Erbjuder både individuella och familjeplaner","badge":null,"score":"4.6","price":"från 270 kr/mån","pros":["Familjeplaner","Bra kundservice","Stort utbud av tillägg"]},{"name":"If Reseförsäkring","url":"https://www.if.se","description":"Kända för sin pålitliga skadehantering","badge":null,"score":"4.8","price":"från 290 kr/mån","pros":["Pålitlig skadehantering","Dygnet runt assistans","Bra täckning"]},{"name":"Trygg-Hansa","url":"https://www.trygghansa.se","description":"Bra för längre resor och backpacking","badge":null,"score":"4.5","price":"från 280 kr/mån","pros":["Längre resor","Backpacking täckning","Konkurrenskraftiga priser"]},{"name":"Länsförsäkringar","url":"https://www.lansforsakringar.se","description":"Lokalt förankrade och personlig service","badge":null,"score":"4.6","price":"från 260 kr/mån","pros":["Personlig service","Lokalt förankrade","Flexibla villkor"]},{"name":"ICA Försäkring","url":"https://www.icaforsakring.se","description":"Prisvärda och enkla försäkringslösningar","badge":null,"score":"4.4","price":"från 240 kr/mån","pros":["Prisvärda","Enkla lösningar","Bra kundsupport"]}];
   var items = fallback.slice();
 
   return {
@@ -54,16 +54,16 @@ export default function Home({ providers, year, month, updated }) {
 
   const TRACK_BASE = 'https://axiom-engine-production-54c3.up.railway.app/r';
   const SITE_SLUG = 'sakrakollen';
-  const AffBtn = ({ url, name, primary }) => {
+  const AffBtn = ({ url, name, primary, network }) => {
     var href = TRACK_BASE && TRACK_BASE.startsWith('http')
-      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG
+      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG + (network && network !== 'adtraction' ? '&network=' + encodeURIComponent(network) : '')
       : url;
     return (
       <a href={href} target="_blank" rel="noopener noreferrer sponsored"
         style={{ display:'inline-block', background: primary ? pc : '#0f172a', color:'#fff',
           padding:'11px 22px', borderRadius:9, fontWeight:700, fontSize:14,
           textDecoration:'none', whiteSpace:'nowrap', transition:'opacity .15s' }}>
-        Välj {name} →
+        {network === 'amazon' ? 'Köp på Amazon →' : 'Välj ' + name + ' →'}
       </a>
     );
   };
@@ -82,23 +82,23 @@ export default function Home({ providers, year, month, updated }) {
   return (
     <>
       <Head>
-        <title>Bästa reseförsäkringen juni 2026 – Jämförelse</title>
-        <meta name="description" content="Utforska bästa reseförsäkringar för juni 2026. ✓ Jämför skydd och priser från ledande svenska leverantörer." />
+        <title>Bästa reseförsäkringar juni 2026</title>
+        <meta name="description" content="Jämför reseförsäkringar för juni 2026 ✓ Omfattande skydd ✓ Prisvärda alternativ ✓ Uppdaterad 2026" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://sakrakollen.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Bästa reseförsäkringen juni 2026 – Jämförelse" />
-        <meta property="og:description" content="Utforska bästa reseförsäkringar för juni 2026. ✓ Jämför skydd och priser från ledande svenska leverantörer." />
+        <meta property="og:title" content="Bästa reseförsäkringar juni 2026" />
+        <meta property="og:description" content="Jämför reseförsäkringar för juni 2026 ✓ Omfattande skydd ✓ Prisvärda alternativ ✓ Uppdaterad 2026" />
         <meta property="og:url" content="https://sakrakollen.vercel.app" />
         <meta property="og:locale" content="sv_SE" />
         <meta property="og:site_name" content="Säkrakollen" />
-        <meta property="og:image" content="https://sakrakollen.vercel.app/api/og?title=B%C3%A4sta%20resef%C3%B6rs%C3%A4kringen%20juni%202026%20%E2%80%93%20J%C3%A4mf%C3%B6relse&niche=försäkring" />
+        <meta property="og:image" content="https://sakrakollen.vercel.app/api/og?title=B%C3%A4sta%20resef%C3%B6rs%C3%A4kringar%20juni%202026&niche=försäkring" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bästa reseförsäkringen juni 2026 – Jämförelse" />
-        <meta name="twitter:description" content="Utforska bästa reseförsäkringar för juni 2026. ✓ Jämför skydd och priser från ledande svenska leverantörer." />
-        <meta name="twitter:image" content="https://sakrakollen.vercel.app/api/og?title=B%C3%A4sta%20resef%C3%B6rs%C3%A4kringen%20juni%202026%20%E2%80%93%20J%C3%A4mf%C3%B6relse&niche=försäkring" />
+        <meta name="twitter:title" content="Bästa reseförsäkringar juni 2026" />
+        <meta name="twitter:description" content="Jämför reseförsäkringar för juni 2026 ✓ Omfattande skydd ✓ Prisvärda alternativ ✓ Uppdaterad 2026" />
+        <meta name="twitter:image" content="https://sakrakollen.vercel.app/api/og?title=B%C3%A4sta%20resef%C3%B6rs%C3%A4kringar%20juni%202026&niche=försäkring" />
         <link rel="alternate" hreflang="sv" href="https://sakrakollen.vercel.app" />
         <link rel="alternate" hreflang="x-default" href="https://sakrakollen.vercel.app" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -148,7 +148,7 @@ export default function Home({ providers, year, month, updated }) {
             </h1>
             <p style={{ fontSize:18, color:'#475569', lineHeight:1.72,
               marginBottom:32, maxWidth:540 }}>
-              Hitta bästa reseförsäkringen för dina behov juni 2026.
+              Jämför marknadens bästa reseförsäkringar för en trygg resa.
             </p>
             <a href="#jamfor" style={{ display:'inline-block', background:pc, color:'#fff',
               padding:'14px 32px', borderRadius:10, fontWeight:700, fontSize:16,
@@ -167,7 +167,7 @@ export default function Home({ providers, year, month, updated }) {
         padding:'16px 20px', fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:960, margin:'0 auto', display:'flex',
           gap:32, flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
-          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Omfattande skydd</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Konkurrenskraftiga priser</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Snabb skadehantering</span></div>
+          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Omfattande skydd</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Prisvärda alternativ</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Snabb och enkel jämförelse</span></div>
         </div>
       </div>
 
@@ -175,7 +175,7 @@ export default function Home({ providers, year, month, updated }) {
         margin:'0 auto', fontFamily:'Inter,sans-serif' }}>
         <div style={{ textAlign:'center', marginBottom:36 }}>
           <h2 style={{ fontSize:30, fontWeight:800, marginBottom:10, color:'#0f172a' }}>
-            Jämför reseförsäkringar
+            Bästa reseförsäkringar 2026
           </h2>
           <p style={{ color:'#64748b', fontSize:15 }}>
             Vi har granskat {providers.length} alternativ &mdash; senast uppdaterat {updated}
@@ -202,6 +202,11 @@ export default function Home({ providers, year, month, updated }) {
                 <div style={{ width:44, height:44, borderRadius:12, background: i===0 ? pcLight : '#f8fafc', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:800, fontSize:16, color: i===0 ? pc : '#64748b', flexShrink:0, border:'1px solid '+(i===0 ? pcMed : '#e2e8f0') }}>
                   {['1','2','3','4','5'][i] || (i+1)}
                 </div>
+                {p.image && (
+                  <div style={{ width:72, height:72, flexShrink:0, borderRadius:10, background:'#f8fafc', border:'1px solid #e2e8f0', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+                    <img src={p.image} alt={p.name} style={{ maxWidth:68, maxHeight:68, objectFit:'contain' }} onError={function(e){e.target.style.display='none';}} />
+                  </div>
+                )}
                 <div style={{ flex:1, minWidth:200 }}>
                   <div style={{ fontWeight:800, fontSize:18, color:'#0f172a', marginBottom:3 }}>{p.name}</div>
                   <div style={{ fontSize:13, color:'#64748b', marginBottom:10 }}>{p.description}</div>
@@ -211,7 +216,7 @@ export default function Home({ providers, year, month, updated }) {
                   <div style={{ fontSize:22, fontWeight:800, color:pc }}>{p.currentPrice || p.price}</div>
                   <Stars score={p.score} />
                   <div style={{ background:'#f0fdf4', color:'#15803d', fontSize:11, fontWeight:700, padding:'3px 10px', borderRadius:8 }}>{p.badge}</div>
-                  <AffBtn url={p.url} name={p.name} primary={i===0} />
+                  <AffBtn url={p.url} name={p.name} primary={i===0} network={p.network} />
                   <button onClick={() => toggleSelect(p.name)} style={{ padding:'7px 14px', borderRadius:8, fontSize:12, fontWeight:600, cursor: selected.includes(p.name) || selected.length < 3 ? 'pointer' : 'not-allowed', fontFamily:'Inter,sans-serif', border:'1px solid', borderColor: selected.includes(p.name) ? pc : '#e2e8f0', background: selected.includes(p.name) ? pcLight : '#fff', color: selected.includes(p.name) ? pc : '#64748b', opacity: !selected.includes(p.name) && selected.length >= 3 ? 0.4 : 1 }}>
                     {selected.includes(p.name) ? '✓ Vald' : '+ Jämför'}
                   </button>
@@ -321,7 +326,7 @@ export default function Home({ providers, year, month, updated }) {
                       </div>
                     )}
                     <div style={{ marginTop:'auto', paddingTop:10 }}>
-                      <AffBtn url={p.url} name={p.name} primary={true} />
+                      <AffBtn url={p.url} name={p.name} primary={true} network={p.network} />
                     </div>
                   </div>
                 );})}
@@ -346,17 +351,17 @@ export default function Home({ providers, year, month, updated }) {
         fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:760, margin:'0 auto' }}>
           <h2 style={{ fontSize:28, fontWeight:800, marginBottom:20, color:'#0f172a' }}>
-            Köpguide
+            Så väljer du rätt
           </h2>
           <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>
-            När du väljer en reseförsäkring är det viktigt att tänka på vilken typ av resa du planerar. Olika försäkringar erbjuder olika nivåer av täckning, från grundläggande skydd till omfattande paket som täcker allt från sjukvård till avbokning av resor. För att få ut det mesta av din försäkring, bör du noga läsa igenom villkoren och se vilka situationer som täcks. Det kan också vara bra att överväga om du behöver extra skydd för specifika aktiviteter som skidåkning eller dykning. Ett annat viktigt övervägande är kostnaden för försäkringen. Priserna kan variera beroende på din ålder, resans längd och destination. Genom att jämföra olika alternativ kan du hitta en försäkring som ger dig det skydd du behöver till ett pris du har råd med. Slutligen, kontrollera vad andra kunder säger om sina erfarenheter med försäkringsbolaget. God kundservice kan vara avgörande om du behöver göra en anmälan eller har frågor kring din försäkring.
+            När det kommer till att välja rätt reseförsäkring, är det viktigt att noggrant överväga dina behov och de risker som kan uppstå under resan. Först och främst bör du tänka på vilken typ av resa du planerar. För en kortare semester kan en grundläggande försäkring räcka, medan en längre resa eller en äventyrsresa kan kräva ett mer omfattande skydd. Kontrollera alltid vad som ingår i försäkringen, så som medicinska utgifter, avbokningsskydd och skydd mot stöld eller förlust av bagage. Det är också viktigt att jämföra självrisk och täckningsbelopp mellan olika försäkringar. Ta också en titt på kundrecensioner och betyg för att få en uppfattning om hur pålitlig och snabb en försäkringsleverantör är när det kommer till att hantera krav.
           </p>
           <h3 style={{ fontSize:22, fontWeight:700, marginBottom:16, color:'#0f172a', marginTop:40 }}>Vanliga misstag</h3>
-          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Ett vanligt misstag när man köper reseförsäkring är att välja det billigaste alternativet utan att noga kontrollera vad som faktiskt täcks. Det kan leda till att du står utan skydd i kritiska situationer. Ett annat misstag är att inte deklarera speciella aktiviteter eller medicinska tillstånd som kan påverka din täckning. Många antar också att de redan är fullt skyddade genom sin hemförsäkring eller kreditkortsbetalning, vilket inte alltid är fallet. Det är viktigt att dubbelkolla all täckning för att undvika obehagliga överraskningar. Slutligen, att inte läsa det finstilta kan leda till missförstånd om vad som ingår i försäkringen, särskilt gällande självrisk och specifika undantag.</p>
+          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Ett vanligt misstag när man skaffar reseförsäkring är att endast fokusera på priset. Det billigaste alternativet är inte alltid det bästa, särskilt om det inte täcker alla dina behov. Ett annat misstag är att inte läsa igenom villkoren ordentligt, vilket kan leda till obehagliga överraskningar om något går fel under resan. Många missar också att försäkra sig om att försäkringen gäller för alla aktiviteter de planerar att delta i, till exempel extremsporter eller äventyrsaktiviteter. Det är viktigt att noggrant läsa igenom vad som är inkluderat och vad som inte är det.</p>
           <h3 style={{ fontSize:20, fontWeight:700, marginBottom:24, color:'#0f172a' }}>
             Vad ska du tänka på?
           </h3>
-          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför täckning och priser</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs kundrecensioner</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Kontrollera villkor noggrant</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Anpassa efter resans behov</p></div>
+          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför olika försäkringar</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Kontrollera täckningsområden</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs kundrecensioner</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Bekräfta giltighet för aktiviteter</p></div>
         </div>
       </section>
 
@@ -365,7 +370,7 @@ export default function Home({ providers, year, month, updated }) {
         <h2 style={{ fontSize:26, fontWeight:800, marginBottom:32, color:'#0f172a' }}>
           Vanliga frågor
         </h2>
-        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Behöver jag reseförsäkring om jag har hemförsäkring?<span style={{color:'#15803d',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Hemförsäkring täcker ofta vissa aspekter av resor, men reseförsäkring ger ett mer omfattande skydd inklusive sjukvård utomlands och avbokningar.</p></details>
+        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilken är den bästa reseförsäkringen för juni 2026?<span style={{color:'#15803d',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Den bästa reseförsäkringen beror på dina individuella behov och resplaner. Jämför olika alternativ för att hitta det som passar dig bäst.</p></details>
       </section>
 
       <section style={{ background:'#f8fafc', borderTop:'1px solid #e2e8f0', padding:'32px 20px', fontFamily:'Inter,sans-serif' }}>
@@ -414,10 +419,10 @@ export default function Home({ providers, year, month, updated }) {
               <div style={{ fontWeight:700, color:'#e2e8f0', marginBottom:14, fontSize:12, textTransform:'uppercase', letterSpacing:'0.5px' }}>Jämförelser</div>
               <div style={{ display:'flex', flexDirection:'column', gap:10, fontSize:14 }}>
                 <Link href="/jamfor/europeiska-erv-vs-gouda-reseforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs Gouda Reseförsäkring</Link>
-                <Link href="/jamfor/europeiska-erv-vs-folksam-reseforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs Folksam Reseförsäkring</Link>
-                <Link href="/jamfor/europeiska-erv-vs-if-reseforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs IF Reseförsäkring</Link>
-                <Link href="/jamfor/europeiska-erv-vs-trygg-hansa-reseforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs Trygg-Hansa Reseförsäkring</Link>
-                <Link href="/jamfor/europeiska-erv-vs-dina-forsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs Dina Försäkringar</Link>
+                <Link href="/jamfor/europeiska-erv-vs-folksam" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs Folksam</Link>
+                <Link href="/jamfor/europeiska-erv-vs-if-reseforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs If Reseförsäkring</Link>
+                <Link href="/jamfor/europeiska-erv-vs-trygg-hansa" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs Trygg-Hansa</Link>
+                <Link href="/jamfor/europeiska-erv-vs-lansforsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Europeiska ERV vs Länsförsäkringar</Link>
               </div>
             </div>
           </div>
